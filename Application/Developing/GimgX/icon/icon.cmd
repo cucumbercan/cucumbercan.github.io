@@ -1,0 +1,1 @@
+D:\software\Dev-Cpp\MinGW64\bin\windres.exe -i "C:\Users\user\Desktop\Cucumber OS\Application\Developing\GimgX\icon\icon.rc" -o "C:\Users\user\Desktop\Cucumber OS\Application\Developing\GimgX\icon.o"
