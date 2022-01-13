@@ -23,16 +23,20 @@
 
 <script>
 function cia(){
-	window.location.href="https://www.cia.gov/the-world-factbook/countries/"+document.getElementById("value").value;
+	href_="https://www.cia.gov/the-world-factbook/countries/"+document.getElementById("value").value.toLowerCase( );
+	open(href_);
 }
 function google(){
-	window.location.href="https://www.google.com/search?q="+document.getElementById("value").value;
+	href_="https://www.google.com/search?q="+document.getElementById("value").value;
+	open(href_);
 }
 function scholar(){
-	window.location.href="https://scholar.google.com/scholar?q="+document.getElementById("value").value;
+	href_="https://scholar.google.com/scholar?q="+document.getElementById("value").value;
+	open(href_);
 }
 function baidu(){
-	window.location.href="https://baidu.com/s?wd="+document.getElementById("value").value;
+	href_="https://baidu.com/s?wd="+document.getElementById("value").value;
+	open(href_);
 }
 </script>
 
