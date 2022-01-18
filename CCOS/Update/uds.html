@@ -5,10 +5,28 @@
 		<title></title>
 	</head>
 	<script>
-		var s="1.0.0.3T";//MAIN Vertion
+		var s=1002;//MAIN Vertion
 		window.onload=Fun;
-		function Fun() {
-			window.location.href="file:///G://system/update/udate.html?&"+s;
+		var number=1;
+		function Get()
+		{
+		      urlinfo=window.location.href; //获取当前页面的url
+		      len=urlinfo.length;//获取url的长度
+		      offset=urlinfo.indexOf("?");//设置参数字符串开始的位置
+		      newsidinfo=urlinfo.substr(offset,len)//取出参数字符串 这里会获得类似“id=1”这样的字符串
+		      newsids=newsidinfo.split("&");//对获得的参数字符串按照“=”进行分割
+		      newsid=newsids[number];//得到参数值
+		      newsname=newsids[2];//得到参数名字
+			  return newsid;
+		}
+		function Fun(){
+			number=1;
+			var user=Get();
+			if(user<s){
+				window.location.href="https://cucumbercan.github.io/CCOS/Update/ud.html";
+			}else{
+				self.close();
+			}
 		}
 	</script>
 	<body>
