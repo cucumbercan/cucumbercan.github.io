@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="no-ie" style="overflow:hidden;">
+	<head>
+		<meta charset="utf-8">
+		<title>UpDate</title>
+	</head>
+	<style>
+		.table {
+			min-height: 95vh;
+			max-height: 95vh;
+			min-width: 25vw;
+			max-width: 25vw;
+			background-color: rgba(230, 230, 230, 0.5);
+			margin: 0px;
+			float: left
+		}
+
+		.list {
+			border-radius: 7px;
+			background-color: rgba(0, 130, 22, 0.3);
+			font-size: 5vh;
+			min-width: 25vw;
+			min-height: 10vh;
+			max-width: 25vw;
+			max-height: 10vh;
+			vertical-align: middle;
+			text-align: center;
+			margin: 0px;
+		}
+		.centre{
+			vertical-align: middle;
+			text-align: center;
+			margin: 0px;
+		}
+	</style>
+	<script>
+		function inner(s) {
+			item = document.getElementById("main");
+			item.innerHTML = s;
+		}
+	</script>
+	<body style="margin: 0px;background-image: url(../../../desktop/bg.png);">
+		<div style="min-height: 5vh;max-height: 5vh;min-width: 100vw;background-color: rgba(0,120,215,0.5);">
+			<div class="centre" style="font-size: 3vh;color: #FFFFFF;" onclick="javascript:self.close();">UpDate</div>
+		</div>
+		<div class="table">
+			<div class="list" onclick="inner('UpDate to CCOS1.0.0.3T.<br><form action=\'https://cucumbercan.github.io/CCOS/Update/update.zip\'><button>Update</button></form>')">UpDate</div>
+		</div>
+		<div id="main"style="margin: 0px;float: right;min-height: 95vh;max-height: 95vh;min-width: 75vw;max-width: 75vw;background-color: rgba(230,230,230,0.8);">
+		</div>
+	</body>
+</html>
