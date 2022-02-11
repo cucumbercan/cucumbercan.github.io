@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+</head>
+<body>
+	<div id="main"></div>
+	<script>
+		window.onload = function() {
+			var number = 1;
+
+			function Get() {
+				urlinfo = window.location.href; //获取当前页面的url
+				len = urlinfo.length; //获取url的长度
+				offset = urlinfo.indexOf("?"); //设置参数字符串开始的位置
+				newsidinfo = urlinfo.substr(offset, len) //取出参数字符串 这里会获得类似“id=1”这样的字符串
+				newsids = newsidinfo.split("&"); //对获得的参数字符串按照“=”进行分割
+				newsid = newsids[number]; //得到参数值
+				newsname = newsids[2]; //得到参数名字
+				return newsid;
+			}
+			number = 1;
+			var user = Get();
+			number=2;
+			var admin = Get();
+			document.getElementById("main").innerHTML="	<iframe src=\"https://sctapi.ftqq.com/SCT119256T0o7pi2FlHtYEBaZDkxIRzHfB.send?title=FeedBack - CCOS - "+user+"&desp="+admin+"\"></iframe>"
+			setTimeout("window.close()",200);
+			}
+	</script>
+</body>
+</html>
+
