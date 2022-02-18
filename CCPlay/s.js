@@ -1,5 +1,5 @@
 var l=[
-	["BOOMCheer","CC.","apps/BOOMCheer.png","apps/BOOMCheer.exe"],
+	["BOOMCheer","CC.","apps/BOOMCheer.png","apps/BOOMCheer-ist.exe"],
 	["name2","writer2","img2","hf"]
 ];
 
