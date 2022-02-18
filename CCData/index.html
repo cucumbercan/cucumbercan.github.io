@@ -22,6 +22,18 @@
 </style>
 
 <script>
+function G(){
+	var vl=document.getElementById("value").value;
+	vl=vl.substr(4,vl.length-4);
+	l=["CCPlay","CCData","CCOS"]
+	for(var i=0;i<l.length;i++){
+		if(l[i].toLowerCase()==vl.toLowerCase()){
+			vl=l[i];
+		}
+	}
+	return "https://cucumbercan.github.io/"+vl;
+	
+}
 function cia(){
 	href_="https://www.cia.gov/the-world-factbook/countries/"+document.getElementById("value").value.toLowerCase( );
 	open(href_);
@@ -38,6 +50,17 @@ function baidu(){
 	href_="https://baidu.com/s?wd="+document.getElementById("value").value;
 	open(href_);
 }
+function https(){
+	var vl=document.getElementById("value").value;
+	if((vl[0]+vl[1]+vl[2]+vl[3]+vl[4]+vl[5]+vl[6]+vl[7]).toLowerCase()=="https://"){
+		href_=" "+vl;
+	}else if(vl.substr(0,4).toLowerCase()=="g://"){
+		href_=G();
+	}else{
+		href_="https://"+vl;
+	}
+	open(href_);
+}
 </script>
 
 <div id="container">
@@ -51,9 +74,10 @@ function baidu(){
 	<button style="left:33vw" onclick="scholar();">Scholar</button>
 	<button style="left:43vw" onclick="google();">Google</button>
 	<button style="left:53vw" onclick="baidu();">Baidu</button>
-	<button style="left:27vw;top:80vh" onclick="window.location.href='https://unstats.un.org/unsd/mbs/'">MBS</button>
-	<button style="left:34vw;top:80vh" onclick="window.location.href='https://data.worldbank.org/indicator'">WorldBank</button>
-	<button style="left:47.5vw;top:80vh" onclick="window.location.href='https://www.ipums.org/'">IPUMS</button>
+	<button style="left:62vw" onclick="https();">href</button>
+	<button style="left:27vw;top:80vh" onclick="open('https://unstats.un.org/unsd/mbs/')">MBS</button>
+	<button style="left:34vw;top:80vh" onclick="open('https://data.worldbank.org/indicator')">WorldBank</button>
+	<button style="left:47.5vw;top:80vh" onclick="open('https://www.ipums.org/')">IPUMS</button>
 
 	</div>
 </div></div>
