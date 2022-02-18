@@ -10,36 +10,10 @@
 			text-decoration: none;
 		}
 	</style>
+	<script src="s.js"></script>
 	<script>
 		window.onload = function() {
-			var number = 1;
-
-			function Get() {
-				urlinfo = window.location.href; //获取当前页面的url
-				len = urlinfo.length; //获取url的长度
-				offset = urlinfo.indexOf("?"); //设置参数字符串开始的位置
-				newsidinfo = urlinfo.substr(offset, len) //取出参数字符串 这里会获得类似“id=1”这样的字符串
-				newsids = newsidinfo.split("&"); //对获得的参数字符串按照“=”进行分割
-				newsid = newsids[number]; //得到参数值
-				newsname = newsids[2]; //得到参数名字
-				return newsid;
-			}
-			number = 1;
-			var user = Get();
-			var s = "";
-			for (var i = 2; i <= user; i += 4) {
-				number = i;
-				var name = Get();
-				number++;
-				var wt = Get();
-				number++;
-				var tc = Get();
-				number++;
-				var hf = Get();
-				//s+="<input type=\"button\" value=\"aaa\"/>"
-				s += "<div style=\"margin:1vw\"><h2><a href=\""+hf+"\">"+name+"</a></h2><span>作者：</span>"+wt+"<br><img src='"+tc+"' style='max-height:50px'></div><br>";
-			}
-			document.getElementById("DIV").innerHTML = s;
+			search();
 		}
 	</script>
 	<body>
