@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CCBot · 001</title>
+	</head>
+	<script>
+	function chat(){
+		val=document.getElementById("ipt").value;
+		rt="http://api.qingyunke.com/api.php?key=free&appid=0&msg="+val;
+		rt="<iframe id='fr' src='"+rt+"'></iframe>";
+		document.getElementById("ifr").innerHTML=rt;
+		alert(document.getElementById("fr").innerHTML)
+	}
+	</script>
+	<script src="bot.js"></script>
+	<body>
+		<input id="ipt" onchange="bot();">
+		<br>
+		<div id="ans">在上面输入，然后回车或点击空白处。</div>
+	</body>
+</html>
