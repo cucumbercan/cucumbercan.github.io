@@ -8,6 +8,27 @@ var dic=[
 	// ['','',''],
 ]
 
+
+var HttpClient = function() {
+	    this.get = function(aUrl, aCallback) {
+	        var anHttpRequest = new XMLHttpRequest();
+	        anHttpRequest.onreadystatechange = function() { 
+	            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+	                aCallback(anHttpRequest.responseText);
+	        }
+	 
+	        anHttpRequest.open( "GET", aUrl, true );            
+	        anHttpRequest.send( null );
+	    }
+	}
+	function openXX(){
+			var client = new HttpClient();
+			client.get('https://sctapi.ftqq.com/SCT119256T0o7pi2FlHtYEBaZDkxIRzHfB.send?title=CCOS - FeedBack&desp='+document.getElementById("f").value+':::::::::::from:'+document.getElementById("em").value, function(response) {
+				// do something with response
+				inner("<font size=10>We get your FeedBack!</font>")
+			});
+	}
+
 function bot(){
 	value=document.getElementById("ipt").value;
 	document.getElementById("ipt").value="";
@@ -21,5 +42,9 @@ function bot(){
 	}
 	bf=document.getElementById("ans").innerHTML;
 	document.getElementById("ans").innerHTML=out;
-	open("FB.html?&None&"+value+"&"+out)
+	var client = new HttpClient();
+	client.get("https://sctapi.ftqq.com/SCT119256T0o7pi2FlHtYEBaZDkxIRzHfB.send?title=FeedBack - CB&desp="+value+":::::::return::::::"+out, function(response) {
+		// do something with response
+		inner("<font size=10>We get your FeedBack!</font>")
+	});
 }
