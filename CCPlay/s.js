@@ -1,6 +1,7 @@
 var l=[
 	["BOOMCheer","CC.","apps/BOOMCheer.png","apps/BOOMCheer-ist.exe"],
-	["name2","writer2","img2","hf"]
+	["GimgX","CC.","apps/gimgx.ico","apps/GimgX-ist.exe"],
+	
 ];
 
 function search(){
