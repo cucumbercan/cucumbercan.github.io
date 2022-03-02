@@ -1,7 +1,7 @@
 var l=[
 	["BOOMCheer","CC.","apps/BOOMCheer.png","apps/BOOMCheer-ist.exe"],
 	["GimgX","CC.","apps/gimgx.ico","apps/GimgX-ist.exe"],
-	["G-Coin","CC.","apps/G-Coin.exe",""],
+	["G-Coin","CC.","","apps/G-Coin.exe"],
 	
 ];
 
