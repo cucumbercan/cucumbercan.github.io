@@ -57,8 +57,8 @@ function setTime() {
 	const Gmonth=Math.floor((Gday/10)%10)
 	const Gyear=Math.floor(Gday/100)
 	
-	//console.log(Gday)
-	//console.log(Gmin)
+	console.log(Gday)
+	console.log(Gmin)
 	
     const ampm = Ghour >= 50 ? 'AM' : 'PM'
 	
