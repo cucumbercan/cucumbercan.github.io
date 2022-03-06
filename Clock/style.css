@@ -41,7 +41,7 @@ body {
   border-radius: 4px;
   padding: 8px 12px;
   position: absolute;
-  top: 100px;
+  top: 10vh;
 }
 
 .toggle:focus {
@@ -111,7 +111,7 @@ body {
 }
 
 .time {
-  font-size: 60px;
+  font-size: 10vw;
 }
 
 .date {
