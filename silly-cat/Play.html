@@ -1,5 +1,23 @@
 <div id="ifr"></div>
 
+<script>
+var number=1;
+	function Get()
+	{
+	      urlinfo=window.location.href; //获取当前页面的url
+	      len=urlinfo.length;//获取url的长度
+	      offset=urlinfo.indexOf("?");//设置参数字符串开始的位置
+	      newsidinfo=urlinfo.substr(offset,len)//取出参数字符串 这里会获得类似“id=1”这样的字符串
+	      newsids=newsidinfo.split("&");//对获得的参数字符串按照“=”进行分割
+	      newsid=newsids[number];//得到参数值
+	      newsname=newsids[2];//得到参数名字
+		  return newsid;
+	}
+	number=1;
+	var user=Get();
+	document.getElementById('ifr').innerHTML="<iframe src='"+user+"' style='width:100vw;height:100vh;broder:0px;'></iframe>";
+</script>
+
 <script src="https://giscus.app/client.js"
         data-repo="Cucumbercan/cucumbercan.github.io"
         data-repo-id="R_kgDOGpvpvw"
