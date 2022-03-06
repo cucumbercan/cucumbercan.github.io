@@ -71,7 +71,7 @@ function setTime() {
 	}
 
     hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(Ghour, 0, 100, 0, 360)}deg)`
-    minuteEl.style.transform = `translate(-50%, -100%) rotate(${scale(minutes, 0, 100, 0, 360)}deg)`
+    minuteEl.style.transform = `translate(-50%, -100%) rotate(${scale(Gmin, 0, 100, 0, 360)}deg)`
     secondEl.style.transform = `translate(-50%, -100%) rotate(${scale(Gsecond, 0, 100, 0, 360)}deg)`
 
     timeEl.innerHTML = `0${Math.floor(Ghour/10)}:0${Math.floor(Gmin/10)}:0${Math.floor(Gsecond/10)} ${ampm}`
