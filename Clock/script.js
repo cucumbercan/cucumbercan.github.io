@@ -1,3 +1,5 @@
+var Gbegin=new Date("2008/10/30 12:49:00")
+
 const hourEl = document.querySelector('.hour')
 const minuteEl = document.querySelector('.minute')
 const secondEl = document.querySelector('.second')
@@ -36,6 +38,14 @@ function dark(){
 	document.getElementById("mode").innerText = 'Light mode'
 }
 
+function setb(stri){
+	if(stri==undefined){
+		Gbegin=new Date()
+		return 1
+	}
+	Gbegin=new Date(stri)
+}
+
 function setTime() {
     const time = new Date();
 	const year = time.getYear()
@@ -47,7 +57,6 @@ function setTime() {
     const minutes = time.getMinutes()
     const seconds = time.getSeconds()
 	
-	const Gbegin=new Date("2008/10/30 12:49:00")
 	const gms=time-Gbegin
 	const gsec=gms/1000
 	const Gday=gsec/60/60/24
@@ -71,7 +80,7 @@ function setTime() {
 	}
 
     hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(Ghour, 0, 100, 0, 360)}deg)`
-    minuteEl.style.transform = `translate(-50%, -100%) rotate(${scale(Gmin, 0, 100, 0, 360)}deg)`
+    minuteEl.style.transform = `translate(-50%, -100%) rotate(${scale(minutes, 0, 100, 0, 360)}deg)`
     secondEl.style.transform = `translate(-50%, -100%) rotate(${scale(Gsecond, 0, 100, 0, 360)}deg)`
 
     timeEl.innerHTML = `0${Math.floor(Ghour/10)}:0${Math.floor(Gmin/10)}:0${Math.floor(Gsecond/10)} ${ampm}`
