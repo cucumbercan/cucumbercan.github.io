@@ -40,7 +40,10 @@ function dark(){
 
 function setb(stri){
 	if(stri==undefined){
-		Gbegin=new Date()
+		setime=new Date()
+		if(setime!=undefined){
+			Gbegin=setime;
+		}
 		return 1
 	}
 	Gbegin=new Date(stri)
@@ -83,7 +86,7 @@ function setTime() {
     minuteEl.style.transform = `translate(-50%, -100%) rotate(${scale(minutes, 0, 100, 0, 360)}deg)`
     secondEl.style.transform = `translate(-50%, -100%) rotate(${scale(Gsecond, 0, 100, 0, 360)}deg)`
 
-    timeEl.innerHTML = `0${Math.floor(Ghour/10)}:0${Math.floor(Gmin/10)}:0${Math.floor(Gsecond/10)} ${ampm}`
+    timeEl.innerHTML = `${Math.floor(Ghour/10)<0?' ':'0'}${Math.floor(Ghour/10)}:${Math.floor(Gmin/10)<0?' ':'0'}${Math.floor(Gmin/10)}:${Math.floor(Gsecond/10)<0?' ':'0'}${Math.floor(Gsecond/10)} ${ampm}`
     dateEl.innerHTML = `Cucumber ${Math.floor(Gyear)}, ${Gmon[Gmonth]} <span class="circle">${Gdays[Math.floor(Gday)%10]}</span>`
 }
 
