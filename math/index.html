@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CCScholar</title>
+	</head>
+	<script src="idx.js"></script>
+	<body>
+		<div style="text-align: center;margin: 0 auto;width: 100vw;">
+			<input placeholder="搜索" id="name" style="height: 30px;border-radius: 10px;width:50vw;font-size: 20px;padding-left:4vh;margin-top: 0px;">
+			<img src="https://win11.blueedge.me/img/icon/search.png" onclick="search();" style="max-height: 30px;margin-top: 10px;">
+		</div>
+		<div style="margin:10px"></div>
+		<div id="body" style="text-align: center;">
+			<img src="main.png" style="height: 500px;width: 1000px;">
+		</div>
+		<div id="history">
+			<ul>
+				<li onclick="sear('2022-03-31')">圆周角相等，为圆心角一半</li>
+			</ul>
+		</div>
+		<style>
+		button {
+		  -webkit-appearance: none;
+		     -moz-appearance: none;
+		          appearance: none;
+		  outline: 0;
+		  background-color: white;
+		  border: 0;
+		  padding: 10px 15px;
+		  color: #53e3a6;
+		  border-radius: 3px;
+		  width: 125px;
+		  cursor: pointer;
+		  font-size: 18px;
+		  background-color: rgba(227,255,225,0.5);
+		  -webkit-transition-duration: 0.25s;
+		          transition-duration: 0.25s;
+		}
+		button:hover {
+		  background-color: rgba(227,255,225,0.9);
+		}
+		</style>
+	</body>
+</html>
