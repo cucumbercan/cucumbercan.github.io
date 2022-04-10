@@ -1,0 +1,58 @@
+.point {
+	position: absolute;
+	max-width: 1px;
+	max-height: 1px;
+	min-width: 1px;
+	min-height: 1px;
+	border: solid;
+	border-width: 3px;
+	border-radius: 50%;
+	background-color: black;
+	z-index: 2;
+}
+
+.line {
+	position: absolute;
+	border: solid;
+	/* border-top-width: medium; */
+	background-color: black max-width: 0px;
+	height: 100px;
+	z-index: 1;
+}
+
+
+@font-face {
+	font-family: 'NewCMMath-Book';
+	src: url(NewCMMath-Book.ttf);
+}
+
+.text {
+	position: absolute;
+	color: #008dd3;
+	font-family: NewCMMath-Book;
+	font-size: 15px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.circle {
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.0);
+	border: #000000, 2.5px;
+	border: solid;
+	border-radius: 50%;
+	display: block;
+	z-index: -2;
+}
+
+.incircle {
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.0);
+	border: 0;
+	border-radius: 50%;
+	display: block;
+	z-index: -1;
+}

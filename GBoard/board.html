@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>G-Board</title>
+	<link rel="stylesheet" href="css/item.css"/>
+	<link rel="stylesheet" href="css/menu.css"/>
+	<script>
+		var movingid=undefined;
+		var lmovingid=undefined;
+	</script>
+	</head>
+	<body style="margin: 0;width: 100vw;height: 100vh;" onmousemove="if(movingid)mousemove(event);">
+		<div id="root">
+			<data data-log="{}" id="data">
+		</div>
+		
+		<ul id="myMenu">
+			<main>
+			    <blockquote style="margin: 20px;">
+					<li onclick="point();clearChose();">New Point</li>
+					<li onclick="line();clearChose();">New Line</li>
+					<li onclick="circle();clearChose();">New Circle</li>
+					<li onclick="move();clearChose();" id="BTNmove">Move</li>
+					<li onclick="find_f();clearChose();">Find</li>
+					<li onclick="text();clearChose();">Text</li>
+					<li onclick="Dele();">Delete</li>
+					<li onclick="IEPORT();clearChose();">Import/Export</li>
+				</blockquote>
+			</main>
+		</ul>
+		
+		<div id="input_box" style="display: none;z-index: 100;">
+		<main style="width: 187px;">
+		<blockquote style="margin: 0px;">
+			<input id="input1" style="height: 15px;width:162px;">
+			<input id="input2" style="height: 15px;width:162px;">
+			<input id="input3" style="height: 15px;width:162px;">
+			
+			<input type="file" id="file" style="height: 30px;width:162px;display: none;">
+			
+			<div id="chose1">
+			</div>
+			
+			<input id="submit" type="button" value="Submit" style="background-color: green;border: 0;border-radius: 5px;height: 20px;width: 162px;color: white;display: block;">
+			<input id="cancle" type="button" value="Cancle" style="background-color: red;border: 0;border-radius: 5px;height: 20px;width: 162px;color: white;display: block;" onclick="input_close();">
+		</blockquote>
+		</main>
+		</div>
+	</body>
+	<script src="js/add.js"></script>
+	<script src="js/menu.js"></script>
+	<script src="js/file.js"></script>
+	<script src="js/move.js"></script>
+</html>
