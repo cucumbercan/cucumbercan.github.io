@@ -1,0 +1,71 @@
+body, main::before{
+    background: #FFFFFF 0 / cover fixed;
+}
+main{
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    width: 150px;
+	height: 300px;
+    line-height: 2;
+    margin: 0px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, .7);
+    box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, .3);
+    overflow: hidden;
+}
+main::before{
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    filter: blur(20px);
+    z-index: -1;
+    margin: 0px;
+}
+
+
+ul,
+input {
+	margin: 0;
+	padding: 0;
+}
+
+#myMenu {
+	z-index: 100;
+	list-style: none;
+	width: 150px;
+	/* border: 1px solid #CCCCCC; */
+	/* border-bottom: none; */
+	position: absolute;
+	display: none;
+}
+
+#myMenu input {
+	/* border-bottom: 1px solid #ccc; */
+	cursor: pointer;
+}
+
+#myMenu input:hover {
+	background-color: #ccc;
+}
+
+.centre {
+	vertical-align: middle;
+	text-align: center;
+	margin: 0px;
+}
+
+input {
+	margin: 10px;
+}
+
+input .menu {
+	margin: 5px;
+	border-radius: 5px;
+	max-width: 100px;
+	max-height: 100px;
+}
+
+
+
