@@ -22,9 +22,9 @@ document.addEventListener("contextmenu", function(event) {
 	myMenu.style.left = MX + "px";
 	
 	console.log(movingid);
-	lmovingid=choseset.size==1?choseset.keys().next().value.id:undefined;
+	lmovingid=movingid;
 	movingid=undefined;
-	choseset.size==1?divxy(choseset.keys().next().value):0;
+	ismoving?divxy(choseset.keys().next().value):0;
 });
 
 document.addEventListener("click", function(event) {
@@ -185,6 +185,11 @@ function circle(){
 
 
 function find_f() {
+	var flag=gotchose("");
+	if(flag.length==1){
+		alert(flag[0].id);
+		return 0;
+	}
 	input_close();
 	input_open();
 	input1.placeholder = "ID";
@@ -206,6 +211,10 @@ function find_f() {
 
 
 function text() {
+	var flag=gotchose("point");
+	var lock=null;
+	if(flag.length==1)
+		lock=flag[0].id;
 	input_close();
 	input_open();
 	input1.placeholder="Text";
@@ -217,7 +226,8 @@ function text() {
 		submit.focus();
 	}
 	submit.onclick = function() {
-		addText(input1.value,MX,MY);
+		console.log(input1.value,MX,MY,lock)
+		addText(input1.value,MX,MY,lock);
 		input_close();
 		clearChose();
 	}
@@ -296,3 +306,11 @@ function Dele(){
 	choseset.clear();
 }
 
+
+function gotchose(CLS){
+	var flag=[];
+	for(x of choseset)
+		if(x.className==CLS)
+			flag.push(x);
+	return flag
+}
