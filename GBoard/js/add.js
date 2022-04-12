@@ -122,9 +122,21 @@ function addcir(o, r) {
 }
 
 
-function addText(text,MoX,MoY){
+function addText(text,MoX,MoY,lock){
+	// console.log(MoX,MoY)
 	root.innerHTML=root.innerHTML+"<div onclick='clicking(this.id)' id='Text:"+text+"' style='top:"+MoY+"px;left:"+MoX+"px;' class='text'>"+text+"</div>";
-	DATA(',{"type":"TEXT","id":"Text:'+text+'","text":"'+text+'","X":"'+MoX+'","Y":"'+MoY+'"}');
+	// console.log(MoY)
+	if(lock){
+		var target=document.getElementById(lock);
+		var me=document.getElementById("Text:"+name);
+		
+		var divy=(MoY-Number(target.style.top.substr(0,target.style.top.length-2)))
+		var divx=(MoX-Number(target.style.left.substr(0,target.style.left.length-2)))
+		
+		DATA(',{"type":"TEXT","id":"Text:'+text+'","text":"'+text+'","X":"'+MoX+'","Y":"'+MoY+'","lock":"true","target":"'+lock+'","divx":"'+divx+'","divy":"'+divy+'"}');
+		return 0;
+	}
+	DATA(',{"type":"TEXT","id":"Text:'+text+'","text":"'+text+'","X":"'+MoX+'","Y":"'+MoY+'","lock":"false"}');
 }
 
 
@@ -169,11 +181,22 @@ function redo(){
 			DEL_dic[target.id]--;
 			continue;
 		}
+		
+		
+		
+		
 		if(target.id==movingid && target.type=="POINT"){
-			// gotomouse(target.id);
 			addpoint(target.id,clientX - divx,clientY - divy);
 			continue;
 		}
+		if(target.id==movingid && target.type=="TEXT"){
+			addText(target.text,clientX - divx,clientY - divy,target.lock=="true"?target.target:null);
+			continue;
+		}
+		
+		
+		
+		
 		if(target.type=="POINT"){
 			addpoint(target.id,Number(target.left),Number(target.right));
 		}else if(target.type=="LINE"){
@@ -181,7 +204,17 @@ function redo(){
 		}else if(target.type=="CIRCLE"){
 			addcir(target.O,target.R);
 		}else if(target.type=="TEXT"){
-			addText(target.text,Number(target.X),Number(target.Y));
+				var ttarget=document.getElementById(target.target);
+			// return ttarget;	
+			// console.log(target.text,Number(ttarget.style.left.substr(0,ttarget.style.left.length-2))+Number(target.divx),Number(ttarget.style.top.substr(0,ttarget.style.top.length-2))+Number(target.divy),target.target);
+			
+			if(target.lock=="true"){
+				var ttarget=document.getElementById(target.target);
+				addText(target.text,Number(ttarget.style.left.substr(0,ttarget.style.left.length-2))+Number(target.divx),Number(ttarget.style.top.substr(0,ttarget.style.top.length-2))+Number(target.divy),target.target);
+				
+			}else{
+				addText(target.text,Number(target.X),Number(target.Y));
+			}
 		}
 	}
 }

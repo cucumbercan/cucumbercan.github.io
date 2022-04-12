@@ -51,6 +51,7 @@ function move() {
 				xid = x.id;
 			else{
 				ismoving=true;
+				clearChose();
 				move();
 				return -1;
 			}
