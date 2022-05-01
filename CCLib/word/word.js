@@ -10,6 +10,8 @@ var teens7D773=[
 	{"word":"form","class":"n","trans":"形态<br>v. 形成","other":["复数: forms "," 三单: forms "," 过去式: formed "," 过去分词: formed "," 现在分词: forming"],"phrase":[""],"example":["The sun <b>formed</b> 4.6 billion years ago. &emsp;&emsp; 太阳形成于4.6亿年前"]},
 	{"word":"metal","class":"n","trans":"金属","other":["复数: metals "," 三单: metals "," 过去式: metalled "," 过去分词: metalled "," 现在分词: metalling"],"phrase":[""],"example":["It is made of <b>metal</b>. &emsp;&emsp; 它是金属的。"]},
 	{"word":"material","class":"n","trans":"原料<br>adj.物质上的","other":["materially &emsp;&emsp; adv.物质上 "," spiritual &emsp;&emsp; adj.精神上的"],"phrase":[""],"example":["He was well-off <b>materially</b>. &emsp;&emsp; 他在物质上很富裕"]},
+	{"word":"experience","class":"n","trans":"经验<br>v. 经历","other":["experienced &emsp;&emsp; adj.有经验的 "," <br> "," 复数: experiences "," 三单: experiences "," 过去式: experienced "," 过去分词: experienced "," 现在分词: experiencing"],"phrase":[""],"example":["He has <b>experience</b> in this area, so he is <b>experienced</b>. &emsp;&emsp; 他在这个领域有经验，所以他是有经验的。"]},
+	{"word":"wipe","class":"n","trans":"擦；v. 擦；","other":[""],"phrase":["wipe out &emsp;&emsp; 消灭"],"example":["When I was <b>wiping</b> the table, an alien appeared and I <b>wipe out</b> it. &emsp;&emsp; 当我擦桌子时，有一个外星人出现了，于是我把他消灭了。"]},
 	
 	]
 	
