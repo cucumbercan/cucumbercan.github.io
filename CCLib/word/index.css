@@ -1,0 +1,29 @@
+.word{
+	background-color: rgba(34,34,34,.9);
+	border-radius: 15px;
+	padding: 15px;
+	width: 75vw;
+	margin-left: 12.5vw;
+	margin-top: 30px;
+}
+.mainw{
+	color: aliceblue;
+	font-size: 30px;
+}
+.cls{
+	color: cadetblue;
+	font-family: font-i;
+}
+.other{
+	color: antiquewhite;
+}
+.example{
+	color: antiquewhite;
+}
+s{
+	color: white;
+	text-decoration: none;
+}
+b{
+	color: cadetblue;
+}

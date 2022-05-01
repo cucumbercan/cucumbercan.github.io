@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>CCLib - Word</title>
+		<link rel="stylesheet" href="../css/font.css" />
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	<body style="margin: 0;background-color: white;">
+		<div><input id="wdurl" value="teens7D773"><button onclick="loadword()">Change</button></div>
+		<div id="total">Total: </div>
+		<div id="words"></div>
+	</body>
+	<script src="word.js"></script>
+	<script>
+		var main_list;
+		function loadword(){
+			document.getElementById("words").innerHTML="";
+			eval("main_list="+document.getElementById("wdurl").value);
+			show();
+			document.getElementById("total").innerHTML="Total: "+main_list.length;
+		}
+		window.onload=loadword;
+	</script>
+	<script src="index.js"></script>
+	<script>show();</script>
+</html>

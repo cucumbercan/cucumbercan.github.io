@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Editor</title>
+	</head>
+	<body>
+		<input placeholder="word" id="w" style="width: 30vw;">
+		<input placeholder="class" id="c" style="width: 30vw;">
+		<input placeholder="trans" id="t" style="width: 30vw;">
+		<br>
+		<br>
+		<textarea placeholder="other" id="o" style="height: 150px;width: 30vw;"></textarea>
+		<textarea placeholder="phrase" id="p" style="height: 150px;width: 30vw;"></textarea>
+		<textarea placeholder="examples" id="e" style="height: 150px;width: 30vw;"></textarea>
+		<br>
+		<br>
+		<input placeholder="release" id="r" style="font-size: 20px;height: 100px;width: 90vw;"/>
+	</body>
+	<script>
+	function a(){
+		var word=document.getElementById("w").value;
+		var cls=document.getElementById("c").value;
+		var trans=document.getElementById("t").value;
+		var other=document.getElementById("o").value;
+		var phrase=document.getElementById("p").value;
+		var exam=document.getElementById("e").value;
+	var model='{"word":"'+word+'","class":"'+cls+'","trans":"'+trans+'","other":["'+other+'"],"phrase":["'+phrase+'"],"example":["'+exam+'"]},';
+	while(model.indexOf("  ")!=-1)	model=model.replace('  '," &emsp;&emsp; ");
+	while(model.indexOf("\n")!=-1)	model=model.replace('\n'," \",\" ");
+	
+	while(model.indexOf("《")!=-1)	model=model.replace('《',"<b>");
+	while(model.indexOf("》")!=-1)	model=model.replace('》',"</b>");
+	document.getElementById('r').value=model;
+	return model;
+	}
+	document.getElementById('e').onchange=function(){
+		return a();
+	}
+	</script>
+</html>
